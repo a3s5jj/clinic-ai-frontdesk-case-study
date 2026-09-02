@@ -1,0 +1,10 @@
+.env
+.env.*
+outputs/
+executions/
+patient-data/
+*.sqlite
+*.db
+*.zip
+*.bak
+*.backup
