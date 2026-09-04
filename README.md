@@ -24,7 +24,7 @@ source of truth, and tell staff when automation has reached its limit.
 ## System flow
 
 ```mermaid
-flowchart TD
+flowchart LR
   A[Incoming text] --> B[Normalize channel and conversation]
   B --> C[Load clinic profile and date table]
   C --> D[Retrieve approved clinic knowledge]
@@ -38,6 +38,17 @@ flowchart TD
   I --> K
   K --> L[Verify result]
   L --> M[Update CRM and reply]
+
+  classDef entry fill:#dbeafe,stroke:#1d4ed8,color:#0f172a
+  classDef ai fill:#ede9fe,stroke:#6d28d9,color:#0f172a
+  classDef logic fill:#dcfce7,stroke:#15803d,color:#0f172a
+  classDef ext fill:#fef3c7,stroke:#b45309,color:#0f172a
+  classDef stop fill:#fee2e2,stroke:#b91c1c,color:#0f172a
+  class A entry
+  class E,F ai
+  class B,C,G,H,I,L,M logic
+  class D,K ext
+  class J stop
 ```
 
 ## Important decisions
