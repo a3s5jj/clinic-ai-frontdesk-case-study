@@ -21,20 +21,20 @@ truth, and tell staff when automation has reached its limit.
 ## How it works
 
 ```mermaid
-flowchart LR
-  A[Incoming text] --> B[Normalize channel and conversation]
-  B --> C[Load clinic profile and date table]
-  C --> D[Retrieve approved clinic knowledge]
-  D --> E[Model proposes reply and action]
+flowchart TD
+  A[Incoming text] --> B[Normalize channel<br/>and conversation]
+  B --> C[Load clinic profile<br/>and date table]
+  C --> D[Retrieve approved<br/>clinic knowledge]
+  D --> E[Model proposes<br/>reply and action]
   E --> F{Action gate}
-  F -->|Answer| G[Return checked reply]
-  F -->|Book| H[Confirmation, hours, and slot recheck]
-  F -->|Move or cancel| I[Find the correct calendar event]
-  F -->|Unknown or sensitive| J[Create staff handoff]
+  F -->|Answer| G[Return checked<br/>reply]
+  F -->|Book| H[Confirmation, hours,<br/>and slot recheck]
+  F -->|Move or cancel| I[Find the correct<br/>calendar event]
+  F -->|Unknown or<br/>sensitive| J[Create staff<br/>handoff]
   H --> K[Calendar write]
   I --> K
   K --> L[Verify result]
-  L --> M[Update CRM and reply]
+  L --> M[Update CRM<br/>and reply]
 
   classDef entry fill:#dbeafe,stroke:#1d4ed8,color:#0f172a
   classDef ai fill:#ede9fe,stroke:#6d28d9,color:#0f172a
